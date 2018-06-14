@@ -1,0 +1,165 @@
+GIT COMMANDS
+
+
+
+Install GIT on Ubuntu:
+
+sudo apt-get update
+sudo apt-get install git
+
+
+Configer Git
+
+setup user name and password
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+
+
+See config file
+
+git config --list
+
+
+Edit Config file
+
+nano ~/.gitconfig
+
+
+
+Clone Repository
+
+git clone https://github.com/git/git.git LocalFolderName
+“cd www” then fire command it will create “LocalFolderName” and checkout repository into that folder.
+
+
+Get Status
+
+git status
+
+
+Commit all and push to master
+
+git commit -a
+git push origin master
+
+
+Commit with message
+
+git commit -m "Initial Commit" -a
+
+
+Commit Specific file(s) with message
+
+git commit -m "Initial Commit" file
+To specify a particular file to commit. To add additional files or directories, you just add a space separated list to the end of that command.
+
+
+View All Branches
+
+git branch -a
+
+
+Create new Branch
+
+git checkout -b develop
+
+
+CheckOut branch
+
+git checkout BranchName
+git checkout master
+
+
+Merge Branch into master
+
+git merge BranchName --no-ff
+“—no-ff", means we want git to retain all of the commit messages prior to the merge. This will make tracking changes easier in the future.
+git push (To push merge on GIT)
+
+
+Fetch All 
+
+git fetch --all
+
+
+Pull
+
+git pull --all
+
+
+Fetch and see changes in code
+
+git fetch
+git diff ...origin
+
+
+Compare branch with master
+
+git diff master origin/master
+“origin/master” created after taken “fetch” and before taking “pull”
+
+
+Pull and Rebase
+
+- git pull -rebase
+
+
+
+Add Files in version control
+
+git add file path
+
+
+create empty hidden file to upload empty folders
+
+touch FolderName/.gitkeep
+
+
+NOTE : for .gitignore file
+
+“FolderName” to ignore a folder
+“FolderName/*” to ignore all file inside folder
+“FolderName/FileName.Extention” to ignore specific file inside folder
+“!.gitkeep” to keep this file in version control
+NOTE :To upload a empty folder in version control we have to create a “.gitkeep” file into that folder and keep .gitkeep file into version control. GIT will not allow to upload an empty folder into version control.
+
+
+
+
+Create .gitignore file
+
+	Global
+
+	- git config --global core.excludesfile ~/.gitignore_global
+
+	Local
+
+	- touch .gitignore
+
+
+
+
+
+Run 2 commands together
+
+git fetch && git checkout phase1part2
+
+
+Change folder permission to read and write
+
+chmod 777 folder_name
+777 for all permission to all
+755 for all permissions to admin only (Recommended)
+
+
+Upload a file to server (without login to SSH)
+
+cd ./files-to-upload
+scp <file to upload> <username>@<hostname>:<destination path>
+scp * user@host:/path/to/upload/files/to
+
+
+SHOW CPU AND RAM STATUS
+
+htop
